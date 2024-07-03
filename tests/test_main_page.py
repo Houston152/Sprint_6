@@ -1,10 +1,11 @@
 import allure
 import pytest
-from locators.locators_yandex_main_page import LocatorYandexMainPage
 from pages.main_page import MainPage
 from locators.locators_main_page import LocatorsMainPage
 from data_answer import DataAnswer
 from urls import Urls
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestCheckMainPage:
@@ -34,5 +35,7 @@ class TestCheckMainPage:
         yandex_main_page.go_to_site(Urls.url_main_page)
         yandex_main_page.click_on_button_main_page()
         driver.switch_to.window(driver.window_handles[1])
-        yandex_main_page.find_element(LocatorYandexMainPage.HEADER_YANDEX_MAIN_PAGE)
-        assert yandex_main_page.get_text_main_page() == "Новости"
+        WebDriverWait(driver, 5).until(EC.url_to_be(Urls.url_yandex_page))
+        expected_url = Urls.url_yandex_page
+        actual_url = driver.current_url
+        assert actual_url == expected_url, f"Ожидалось, что URL будет '{expected_url}', но получил '{actual_url}'"

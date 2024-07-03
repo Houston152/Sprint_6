@@ -9,3 +9,23 @@ class DataAnswer:
         'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.',
         'Да, обязательно. Всем самокатов! И Москве, и Московской области.',
         ]
+
+    ORDER_DATA_TOP_BUTTON = {
+        "first_name": "Иван",
+        "last_name": "Иванов",
+        "address": "г. Нижний Новгород, д. 1",
+        "phone_number": "+71111111111",
+        "rental_value": "RENTAL_VALUE_1",
+        "scooter_color": "SCOOTER_BLACK",
+        "comment": "Не торопитесь привозить"
+    }
+
+    ORDER_DATA_MIDDLE_BUTTON = {
+        "first_name": "Петр",
+        "last_name": "Петров",
+        "address": "г. Москва, д. 2",
+        "phone_number": "+72222222222",
+        "rental_value": "RENTAL_VALUE_2",
+        "scooter_color": "SCOOTER_GREY",
+        "comment": "Самокат очень срочно нужен"
+    }
